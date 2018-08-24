@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(sam_ins)
+project(sam_save_alldata)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -137,14 +137,9 @@ link_directories(${OpenCV_LIBRARY_DIRS})
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/sam_ins_node.cpp)
-add_executable(sam_ins src/sam_inscam.cpp src/ServerClass.cpp src/Rasberry_GPIOClass.cpp)
-target_link_libraries(sam_ins ${catkin_LIBRARIES} ${OpenCV_LIBS})
 
-add_executable(save_alldata_node src/save_alldata_node.cpp )
-target_link_libraries(save_alldata_node ${catkin_LIBRARIES} ${OpenCV_LIBS})
-
-add_executable(ins_node src/ins_node.cpp src/ServerClass.cpp )
-target_link_libraries(ins_node ${catkin_LIBRARIES})
+add_executable(sam_save_alldata_node src/sam_save_alldata_node.cpp )
+target_link_libraries(sam_save_alldata_node ${catkin_LIBRARIES} ${OpenCV_LIBS})
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
